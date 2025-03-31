@@ -1,2 +1,2 @@
 from .user import User
-from .categoria import Caetgoria
+from .categoria import Categoria
