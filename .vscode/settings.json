@@ -5,6 +5,6 @@
   ],
   "python.analysis.autoImportCompletions": true,
   "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff"
+    "editor.defaultFormatter": "mikoz.black-py"
   }
 }
