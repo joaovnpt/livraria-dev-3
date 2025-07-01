@@ -64,11 +64,16 @@ class CategoriaAdmin(admin.ModelAdmin):
     ordering = ('descricao',)
     list_per_page = 10
 
+class ItensCompraInline(admin.StackedInline):
+    model = ItensCompra
+    extra = 1
+
 @admin.register(Compra)
 class CompraAdmin(admin.ModelAdmin):
     list_display = ('usuario', 'status')
     ordering = ('usuario', 'status')
     list_per_page = 10
+    inlines = [ItensCompraInline]
 
 @admin.register(Editora)
 class EditoraAdmin(admin.ModelAdmin):
@@ -76,12 +81,6 @@ class EditoraAdmin(admin.ModelAdmin):
     search_fields = ('nome', 'email', 'cidade')
     list_filter = ('nome', 'email', 'cidade')
     ordering = ('nome', 'email', 'cidade')
-    list_per_page = 10
-
-@admin.register(ItensCompra)
-class ItensCompra(admin.ModelAdmin):
-    list_display = ('compra', 'livro', 'quantidade')
-    ordering = ('compra', 'livro', 'quantidade')
     list_per_page = 10
 
 @admin.register(Livro)
