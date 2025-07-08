@@ -13,4 +13,4 @@ class CompraSerializer(ModelSerializer):
     itens = ItensCompraSerializer(many=True, read_only=True)
     class Meta:
         model = Compra
-        fields = ('id', 'usuario', 'status', 'itens')
+        fields = ('livro', 'quantidade')
